@@ -1,0 +1,16 @@
+import cv2
+image=cv2.imread("example.jpg")
+if image is None:
+  print("Error")
+  exit()
+height,width,_=image.shape
+left_quadrant=image[:,:width//2]
+right_quadrant=image[:,width//2:]
+top_quadrant=image[:height//2,:]
+bottom_quadrant=image[height//2:,:]
+cv2.imshow("left quardrant",left_quadrant)
+cv2.imshow("right quardrant",right_quadrant)
+cv2.imshow("top quardrant",top_quadrant)
+cv2.imshow("bottom quardrant",bottom_quadrant)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
